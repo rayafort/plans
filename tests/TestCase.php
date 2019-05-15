@@ -54,14 +54,14 @@ class TestCase extends Testbench
     }
 
     /**
-     * Get Laraplans package service provider.
+     * Get Plans package service provider.
      *
      * @param  \Illuminate\Foundation\Application $app
      * @return array
      */
     public function getPackageProviders($app)
     {
-        return ['Gerardojbaez\Laraplans\LaraplansServiceProvider'];
+        return ['RayaFort\Plans\PlansServiceProvider'];
     }
 
     /**

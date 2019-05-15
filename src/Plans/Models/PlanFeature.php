@@ -1,10 +1,10 @@
 <?php
 
-namespace Gerardojbaez\Laraplans\Models;
+namespace RayaFort\Plans\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Gerardojbaez\Laraplans\Traits\BelongsToPlan;
-use Gerardojbaez\Laraplans\Contracts\PlanFeatureInterface;
+use RayaFort\Plans\Traits\BelongsToPlan;
+use RayaFort\Plans\Contracts\PlanFeatureInterface;
 
 class PlanFeature extends Model implements PlanFeatureInterface
 {
@@ -31,16 +31,5 @@ class PlanFeature extends Model implements PlanFeatureInterface
         'created_at', 'updated_at'
     ];
 
-    /**
-     * Get feature usage.
-     *
-     * This will return all related
-     * subscriptions usages.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function usage()
-    {
-        return $this->hasMany(config('laraplans.models.plan_subscription_usage'));
-    }
+    
 }

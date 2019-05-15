@@ -1,9 +1,9 @@
 <?php
 
-namespace Gerardojbaez\Laraplans;
+namespace RayaFort\Plans;
 
 use Carbon\Carbon;
-use Gerardojbaez\Laraplans\Exceptions\InvalidIntervalException;
+use RayaFort\Plans\Exceptions\InvalidIntervalException;
 
 class Period
 {
@@ -12,6 +12,7 @@ class Period
      */
     const DAY = 'day';
     const WEEK = 'week';
+    const FORTNIGHT = 'fortnight';
     const MONTH = 'month';
     const YEAR = 'year';
 
@@ -23,6 +24,7 @@ class Period
     protected static $intervalMapping = [
         self::DAY => 'addDays',
         self::WEEK => 'addWeeks',
+        self::FORTNIGHT => 'addTwoWeeks',
         self::MONTH => 'addMonths',
         self::YEAR => 'addYears',
     ];
@@ -55,15 +57,15 @@ class Period
      */
     protected $interval_count = 1;
 
-    /**
-     * Create a new Period instance.
-     *
-     * @param  string $interval Interval
-     * @param  int $count Interval count
-     * @param  string $start Starting point
-     * @throws  \Gerardojbaez\Laraplans\Exceptions\InvalidIntervalException
-     * @return  void
-     */
+	/**
+	 * Create a new Period instance.
+	 *
+	 * @param string $interval Interval
+	 * @param int $count Interval count
+	 * @param string $start Starting point
+	 *
+	 * @throws InvalidIntervalException
+	 */
     public function __construct($interval = 'month', $count = 1, $start = '')
     {
         if (empty($start)) {
@@ -116,7 +118,7 @@ class Period
     /**
      * Get end date.
      *
-     * @return string
+     * @return Carbon
      */
     public function getEndDate()
     {

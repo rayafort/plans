@@ -1,10 +1,9 @@
 <?php
 
-namespace Gerardojbaez\Laraplans;
+namespace RayaFort\Plans;
 
 use Carbon\Carbon;
-use Gerardojbaez\Laraplans\Period;
-use Gerardojbaez\Laraplans\Exceptions\InvalidPlanFeatureException;
+use RayaFort\Plans\Exceptions\InvalidPlanFeatureException;
 
 class Feature
 {
@@ -29,13 +28,15 @@ class Feature
      */
     protected $resettable_count;
 
-    /**
-     * Create a new Feature instance.
-     *
-     * @param string $feature_code
-     * @throws  \Gerardojbaez\Laraplans\Exceptions\InvalidPlanFeatureException
-     * @return void
-     */
+	/**
+	 * Create a new Feature instance.
+	 *
+	 * @param string $feature_code
+	 *
+	 * @return void
+	 * @throws InvalidPlanFeatureException
+	 * @throws  \Gerardojbaez\Laraplans\Exceptions\InvalidPlanFeatureException
+	 */
     public function __construct($feature_code)
     {
         if (!self::isValid($feature_code)) {
@@ -164,12 +165,14 @@ class Feature
         return is_string($this->resettable_interval);
     }
 
-    /**
-     * Get feature's reset date.
-     *
-     * @param string $dateFrom
-     * @return \Carbon\Carbon
-     */
+	/**
+	 * Get feature's reset date.
+	 *
+	 * @param string $dateFrom
+	 *
+	 * @return \Carbon\Carbon
+	 * @throws Exceptions\InvalidIntervalException
+	 */
     public function getResetDate($dateFrom = '')
     {
         if (empty($dateFrom)) {

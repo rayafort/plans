@@ -25,14 +25,12 @@ return [
     |--------------------------------------------------------------------------
     |
     | If you want to use your own models you will want to update the following
-    | array to make sure Laraplans use them.
+    | array to make sure Plans use them.
     |
     */
     'models' => [
-        'plan' => 'Gerardojbaez\Laraplans\Models\Plan',
-        'plan_feature' => 'Gerardojbaez\Laraplans\Models\PlanFeature',
-        'plan_subscription' => 'Gerardojbaez\Laraplans\Models\PlanSubscription',
-        'plan_subscription_usage' => 'Gerardojbaez\Laraplans\Models\PlanSubscriptionUsage',
+        'plan' => 'RayaFort\Plans\Models\Plan',
+        'plan_feature' => 'RayaFort\Plans\Models\PlanFeature',
     ],
 
     /*

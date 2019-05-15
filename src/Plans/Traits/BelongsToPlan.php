@@ -1,6 +1,6 @@
 <?php
 
-namespace Gerardojbaez\Laraplans\Traits;
+namespace RayaFort\Plans\Traits;
 
 trait BelongsToPlan
 {

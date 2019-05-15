@@ -1,11 +1,11 @@
 <?php
 
-namespace Gerardojbaez\Laraplans\Events;
+namespace RayaFort\Plans\Events;
 
-use Gerardojbaez\Laraplans\Models\PlanSubscription;
+use RayaFort\Plans\Models\PlanSubscription;
 use Illuminate\Queue\SerializesModels;
 
-class SubscriptionCanceled
+class SubscriptionPlanChanged
 {
     use SerializesModels;
 

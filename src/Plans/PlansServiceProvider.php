@@ -1,18 +1,18 @@
 <?php
 
-namespace Gerardojbaez\Laraplans;
+namespace RayaFort\Plans;
 
 use Illuminate\Support\ServiceProvider;
-use Gerardojbaez\Laraplans\SubscriptionBuilder;
-use Gerardojbaez\Laraplans\SubscriptionResolver;
-use Gerardojbaez\Laraplans\Contracts\PlanInterface;
-use Gerardojbaez\Laraplans\Contracts\PlanFeatureInterface;
-use Gerardojbaez\Laraplans\Contracts\PlanSubscriptionInterface;
-use Gerardojbaez\Laraplans\Contracts\SubscriptionBuilderInterface;
-use Gerardojbaez\Laraplans\Contracts\SubscriptionResolverInterface;
-use Gerardojbaez\Laraplans\Contracts\PlanSubscriptionUsageInterface;
+use RayaFort\Plans\SubscriptionBuilder;
+use RayaFort\Plans\SubscriptionResolver;
+use RayaFort\Plans\Contracts\PlanInterface;
+use RayaFort\Plans\Contracts\PlanFeatureInterface;
+use RayaFort\Plans\Contracts\PlanSubscriptionInterface;
+use RayaFort\Plans\Contracts\SubscriptionBuilderInterface;
+use RayaFort\Plans\Contracts\SubscriptionResolverInterface;
+use RayaFort\Plans\Contracts\PlanSubscriptionUsageInterface;
 
-class LaraplansServiceProvider extends ServiceProvider
+class PlansServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -28,7 +28,7 @@ class LaraplansServiceProvider extends ServiceProvider
         ], 'migrations');
 
         $this->publishes([
-            __DIR__.'/../config/laraplans.php' => config_path('laraplans.php')
+	        __DIR__ . '/../config/plans.php' => config_path('plans.php')
         ], 'config');
 
         $this->publishes([
@@ -43,7 +43,7 @@ class LaraplansServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/laraplans.php', 'laraplans');
+        $this->mergeConfigFrom( __DIR__ . '/../config/plans.php', 'laraplans');
 
         $this->app->bind(PlanInterface::class, config('laraplans.models.plan'));
         $this->app->bind(PlanFeatureInterface::class, config('laraplans.models.plan_feature'));

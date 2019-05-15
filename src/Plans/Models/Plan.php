@@ -1,11 +1,11 @@
 <?php
 
-namespace Gerardojbaez\Laraplans\Models;
+namespace RayaFort\Plans\Models;
 
-use Gerardojbaez\Laraplans\Period;
+use RayaFort\Plans\Period;
 use Illuminate\Database\Eloquent\Model;
-use Gerardojbaez\Laraplans\Contracts\PlanInterface;
-use Gerardojbaez\LaraPlans\Exceptions\InvalidPlanFeatureException;
+use RayaFort\Plans\Contracts\PlanInterface;
+use RayaFort\Plans\Exceptions\InvalidPlanFeatureException;
 
 class Plan extends Model implements PlanInterface
 {
