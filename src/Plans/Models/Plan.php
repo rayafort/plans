@@ -64,16 +64,6 @@ class Plan extends Model implements PlanInterface
     }
 
     /**
-     * Get plan subscriptions.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function subscriptions()
-    {
-        return $this->hasMany(config('laraplans.models.plan_subscription'));
-    }
-
-    /**
      * Get Interval Name
      *
      * @return mixed string|null
@@ -91,7 +81,7 @@ class Plan extends Model implements PlanInterface
      */
     public function getIntervalDescriptionAttribute()
     {
-        return trans_choice('laraplans::messages.interval_description.'.$this->interval, $this->interval_count);
+        return trans_choice('plans::messages.interval_description.'.$this->interval, $this->interval_count);
     }
 
     /**

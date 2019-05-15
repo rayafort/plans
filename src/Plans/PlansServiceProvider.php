@@ -3,14 +3,8 @@
 namespace RayaFort\Plans;
 
 use Illuminate\Support\ServiceProvider;
-use RayaFort\Plans\SubscriptionBuilder;
-use RayaFort\Plans\SubscriptionResolver;
 use RayaFort\Plans\Contracts\PlanInterface;
 use RayaFort\Plans\Contracts\PlanFeatureInterface;
-use RayaFort\Plans\Contracts\PlanSubscriptionInterface;
-use RayaFort\Plans\Contracts\SubscriptionBuilderInterface;
-use RayaFort\Plans\Contracts\SubscriptionResolverInterface;
-use RayaFort\Plans\Contracts\PlanSubscriptionUsageInterface;
 
 class PlansServiceProvider extends ServiceProvider
 {
@@ -21,7 +15,7 @@ class PlansServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__.'/../lang', 'laraplans');
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'plans');
 
         $this->publishes([
             __DIR__.'/../database/migrations/' => database_path('migrations')
@@ -32,7 +26,7 @@ class PlansServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/../lang' => resource_path('lang/vendor/laraplans'),
+            __DIR__.'/../lang' => resource_path('lang/vendor/plans'),
         ]);
     }
 
@@ -43,14 +37,11 @@ class PlansServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom( __DIR__ . '/../config/plans.php', 'laraplans');
+        $this->mergeConfigFrom( __DIR__ . '/../config/plans.php', 'plans');
 
-        $this->app->bind(PlanInterface::class, config('laraplans.models.plan'));
-        $this->app->bind(PlanFeatureInterface::class, config('laraplans.models.plan_feature'));
-        $this->app->bind(PlanSubscriptionInterface::class, config('laraplans.models.plan_subscription'));
-        $this->app->bind(PlanSubscriptionUsageInterface::class, config('laraplans.models.plan_subscription_usage'));
-        $this->app->bind(SubscriptionBuilderInterface::class, SubscriptionBuilder::class);
-        $this->app->bind(SubscriptionResolverInterface::class, SubscriptionResolver::class);
+        $this->app->bind(PlanInterface::class, config('plans.models.plan'));
+        $this->app->bind(PlanFeatureInterface::class, config('plans.models.plan_feature'));
+
     }
 
     /**
