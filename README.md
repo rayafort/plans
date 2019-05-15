@@ -3,13 +3,13 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/gerardojbaez/laraplans.svg?style=flat-square)](https://packagist.org/packages/gerardojbaez/laraplans)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
-# Laraplans
+# Plans
 
 SaaS style recurring plans for Laravel 5.
 
 **Documentation is available at http://laraplans.readthedocs.io**
 
-> *Payments are out of scope for this package.*
+> *Payments and Subscriptions are out of scope for this package.*
 
 ## Feedback
 
@@ -17,6 +17,10 @@ SaaS style recurring plans for Laravel 5.
 
 ## Install
 
-    composer require gerardojbaez/laraplans
+    composer require rayafort/plans
 
 For package setup please follow the [install guide](http://laraplans.readthedocs.io/en/latest/install.html).
+
+## Acknowledgments: 
+
+A fork of: https://github.com/gerardojbaez/laraplans
