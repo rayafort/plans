@@ -1,11 +1,11 @@
 {
-    "name": "wsenjer/plans",
-    "description": "SaaS style recurring plans for Laravel.",
-    "keywords": ["plans", "laravel", "subscriptions", "memberships"],
+    "name": "rayafort/plans",
+    "description": "SaaS style plans for Laravel.",
+    "keywords": ["plans", "laravel", "memberships"],
     "license": "MIT",
     "type": "library",
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=7.0",
         "nesbot/carbon": "~1.21",
         "illuminate/support": "~5.3",
         "illuminate/database": "~5.3"
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Gerardojbaez\\Laraplans\\": "src/Laraplans/"
+            "RayaFort\\Plans\\": "src/RayaFort/"
         }
     },
     "autoload-dev": {
@@ -26,7 +26,7 @@
             "tests/TestCase.php"
         ],
         "psr-4": {
-            "Gerardojbaez\\Laraplans\\Tests\\": "tests/"
+            "RayaFort\\Plans\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev"
