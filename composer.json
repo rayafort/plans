@@ -1,6 +1,6 @@
 {
     "name": "rayafort/plans",
-    "description": "SaaS style plans for Laravel.",
+    "description": "SaaS style Plans and Features for Laravel.",
     "keywords": ["plans", "laravel", "memberships"],
     "license": "MIT",
     "type": "library",
