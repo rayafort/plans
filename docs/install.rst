@@ -6,12 +6,12 @@ Composer
 
 .. code-block:: bash
 
-    $ composer require gerardojbaez/laraplans
+    $ composer require rayafort/plans
 
 Service Provider
 ----------------
 
-Add ``Gerardojbaez\Laraplans\LaraplansServiceProvider::class`` to your application service providers file: ``config/app.php``.
+Add ``RayaFort\Plans\PlansServiceProvider::class`` to your application service providers file: ``config/app.php``.
 
 .. code-block:: php
 
@@ -19,7 +19,7 @@ Add ``Gerardojbaez\Laraplans\LaraplansServiceProvider::class`` to your applicati
         /**
          * Third Party Service Providers...
          */
-        Gerardojbaez\Laraplans\LaraplansServiceProvider::class,
+        RayaFort\Plans\PlansServiceProvider::class,
     ]
 
 Config File and Migrations
@@ -29,7 +29,7 @@ Publish package config file and migrations with the following command:
 
 .. code-block:: bash
 
-    php artisan vendor:publish --provider="Gerardojbaez\Laraplans\LaraplansServiceProvider"
+    php artisan vendor:publish --provider="RayaFort\Plans\PlansServiceProvider"
 
 Then run migrations:
 
@@ -40,7 +40,7 @@ Then run migrations:
 Traits and Contracts
 --------------------
 
-Add ``Gerardojbaez\Laraplans\Traits\PlanSubscriber`` trait and ``Gerardojbaez\Laraplans\Contracts\PlanSubscriberInterface`` contract to your ``User`` model.
+Add ``RayaFort\Plans\Traits\PlanSubscriber`` trait and ``RayaFort\Plans\Contracts\PlanSubscriberInterface`` contract to your ``User`` model.
 
 See the following example:
 
@@ -49,8 +49,8 @@ See the following example:
     namespace App\Models;
 
     use Illuminate\Foundation\Auth\User as Authenticatable;
-    use Gerardojbaez\Laraplans\Contracts\PlanSubscriberInterface;
-    use Gerardojbaez\Laraplans\Traits\PlanSubscriber;
+    use RayaFort\Plans\Contracts\PlanSubscriberInterface;
+    use RayaFort\Plans\Traits\PlanSubscriber;
 
     class User extends Authenticatable implements PlanSubscriberInterface
     {

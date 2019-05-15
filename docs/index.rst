@@ -1,12 +1,12 @@
-Welcome to Laraplans's documentation!
+Welcome to Plans' documentation!
 =====================================
 
-This library intends to provide a quick starting point to any app that requires SaaS style plans and subscriptions.
+This library intends to provide a quick starting point to any app that requires SaaS style plans and features.
 
 .. toctree::
    :hidden:
 
-   Laraplans <self>
+   Plans <self>
 
 .. toctree::
    :maxdepth: 2
@@ -14,6 +14,5 @@ This library intends to provide a quick starting point to any app that requires 
    install
    usage
    events
-   eloquent_scopes
    configurations
 
