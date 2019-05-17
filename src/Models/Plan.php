@@ -60,7 +60,7 @@ class Plan extends Model implements PlanInterface
      */
     public function features()
     {
-        return $this->hasMany(config('laraplans.models.plan_feature'));
+        return $this->hasMany(PlanFeature::class);
     }
 
     /**
