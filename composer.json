@@ -18,16 +18,25 @@
     },
     "autoload": {
         "psr-4": {
-            "RayaFort\\Plans\\": "src/RayaFort/"
+            "RayaFort\\Plans\\": "src/"
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php"
-        ],
         "psr-4": {
             "RayaFort\\Plans\\Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev"
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RayaFort\\Plans\\PlansServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
+
