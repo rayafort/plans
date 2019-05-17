@@ -15,18 +15,18 @@ class PlansServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__.'/../lang', 'plans');
+        $this->loadTranslationsFrom(__DIR__.'/lang', 'plans');
 
         $this->publishes([
-            __DIR__.'/../database/migrations/' => database_path('migrations')
+            __DIR__.'/database/migrations/' => database_path('migrations')
         ], 'migrations');
 
         $this->publishes([
-	        __DIR__ . '/../config/plans.php' => config_path('plans.php')
+	        __DIR__ . '/config/plans.php' => config_path('plans.php')
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/../lang' => resource_path('lang/vendor/plans'),
+            __DIR__.'/lang' => resource_path('lang/vendor/plans'),
         ]);
     }
 
@@ -37,7 +37,7 @@ class PlansServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom( __DIR__ . '/../config/plans.php', 'plans');
+        $this->mergeConfigFrom( __DIR__ . '/config/plans.php', 'plans');
 
         $this->app->bind(PlanInterface::class, config('plans.models.plan'));
         $this->app->bind(PlanFeatureInterface::class, config('plans.models.plan_feature'));
